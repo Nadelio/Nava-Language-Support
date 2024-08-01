@@ -1,0 +1,30 @@
+{
+  "name": "nava-language-support",
+  "displayName": "Nava Language Support",
+  "description": "Nava Langauge Syntax Highlighting Support",
+  "icon": "NavaVSCIcon.png",
+  "publisher": "Nadelio",
+  "author": {
+    "name": "Nadelio"
+  },
+  "version": "1.0.5",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "nava",
+      "aliases": ["Nava", "nava"],
+      "extensions": [".nava"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "nava",
+      "scopeName": "source.nava",
+      "path": "./syntaxes/nava.tmLanguage.json"
+    }]
+  }
+}

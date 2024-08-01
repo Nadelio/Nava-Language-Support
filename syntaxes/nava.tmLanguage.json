@@ -1,0 +1,159 @@
+{
+  "fileTypes": [
+    "nava"
+  ],
+  "name": "nava",
+  "patterns": [
+    {
+      "include": "#main"
+    }
+  ],
+  "scopeName": "source.nava",
+  "repository": {
+    "main": {
+      "patterns": [
+        {
+          "match": "\\b(SIZE=|HOOK=|INC|DEC|SET|MOV|OUT|ADD|SUB|MUL|DIV|SIF|FUN|RPT|DLY)\\b",
+          "name": "keyword.nava"
+        },
+        {
+          "include": "#numeric"
+        },
+        {
+          "include": "#extension_names"
+        },
+        {
+          "match": "(^([a-zA-z]+?)(?=\\[))",
+          "name": "keyword.other.special-method.nava"
+        },
+        {
+          "begin": "(\\>|\\[)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.operator.nava"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#main__1"
+            }
+          ],
+          "end": "(\\<|\\])",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.operator.nava"
+            }
+          }
+        },
+        {
+          "begin": "(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.nava"
+            }
+          },
+          "contentName": "text.nava",
+          "end": "(\\))",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.nava"
+            }
+          }
+        },
+        {
+          "begin": "(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.nava"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#main__3"
+            }
+          ],
+          "end": "(\\))",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.nava"
+            }
+          }
+        },
+        {
+          "include": "#multi_line_comment"
+        },
+        {
+          "match": "(;.*)",
+          "name": "comment.line.nava"
+        },
+        {
+          "match": "([^\\s])",
+          "name": "invalid.nava"
+        }
+      ]
+    },
+    "main__1": {
+      "patterns": [
+        {
+          "include": "#main"
+        }
+      ]
+    },
+    "main__2": {
+      "patterns": []
+    },
+    "main__3": {
+      "patterns": [
+        {
+          "include": "#numeric"
+        },
+        {
+          "match": "(,)",
+          "name": "punctuation.nava"
+        }
+      ]
+    },
+    "multi_line_comment": {
+      "patterns": [
+        {
+          "begin": "(/\\*)",
+          "beginCaptures": {
+            "1": {
+              "name": "comment.line.nava"
+            }
+          },
+          "contentName": "comment.line.nava",
+          "end": "(\\*/)",
+          "endCaptures": {
+            "1": {
+              "name": "comment.line.nava"
+            }
+          }
+        }
+      ]
+    },
+    "multi_line_comment__1": {
+      "patterns": []
+    },
+    "numeric": {
+      "patterns": [
+        {
+          "match": "(\\b\\d+)",
+          "name": "constant.numeric.nava"
+        }
+      ]
+    },
+    "extension_names": {
+      "patterns": [
+        {
+          "match": "((?<=HOOK=|,)[^,;]+(?=,|;))",
+          "name": "keyword.other.special-method.nava"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.nava"
+        }
+      ]
+    }
+  }
+}
