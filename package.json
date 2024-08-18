@@ -14,6 +14,10 @@
   "categories": [
     "Programming Languages"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nadelio/nava-language-support.git"
+  },
   "contributes": {
     "languages": [{
       "id": "nava",
