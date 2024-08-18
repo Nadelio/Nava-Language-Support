@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nadelio/nava-language-support.git"
+    "url": "https://github.com/Nadelio/Nava-Language-Support.git"
   },
   "contributes": {
     "languages": [{
